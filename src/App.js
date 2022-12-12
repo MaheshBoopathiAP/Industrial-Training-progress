@@ -1,25 +1,36 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import { BrowserRouter, Routes ,Route} from 'react-router-dom'
+import Home from './Project/Home'
+import ContactUs from './Project/ContactUs'
+import AboutUs from './Project/AboutUs'
+import ButtonAppBar from './Project/AppBarDemo'
+import ClickCounter from './Hoc/ClickCounter'
+import HoverCounter from './Hoc/HoverCounter'
+import EnComponent from './Hoc/Hoc'
+import HooksEx from './Components/HooksEx/HooksEx'
+import LoginEx from './FormsEx/LoginEx'
+//import ButtonAppBar from './Project/AppBarDemo'
+//import SwitchLabels from './Project/SwitchBarDemo'
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <div>
+      <ButtonAppBar/>
+      <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home/>}/>
+        <Route path="/Contact" element={<ContactUs/>}/>
+        <Route path="/Aboutus" element={<AboutUs/>}/>
+        </Routes>
+        </BrowserRouter>
+        <ClickCounter/>
+        <HoverCounter/>
+        <EnComponent/>
+  <HooksEx/>
+        <LoginEx/>
+       </div>
+    
+  )
 }
 
-export default App;
+export default App
